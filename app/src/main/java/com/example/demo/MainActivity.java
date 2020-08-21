@@ -15,9 +15,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.demo.lifecycle.LocationObserver;
 import com.example.demo.lifecycle.MyLifecycleService;
+import com.example.demo.livadata.LiveDataActivity;
+import com.example.demo.viewmodel.ViewModelActivity;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner, LocationObserver.OnLocationChangeListener {
 
@@ -75,5 +78,13 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, L
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_settings, menu);
         return true;
+    }
+
+    public void toViewModel(View view) {
+        startActivity(new Intent(MainActivity.this, ViewModelActivity.class));
+    }
+
+    public void toLiveData(View view) {
+        startActivity(new Intent(MainActivity.this, LiveDataActivity.class));
     }
 }
