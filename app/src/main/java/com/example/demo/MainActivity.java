@@ -1,11 +1,9 @@
 package com.example.demo;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -18,10 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.demo.lifecycle.LocationObserver;
-import com.example.demo.lifecycle.MyLifecycleService;
 import com.example.demo.livadata.LiveDataActivity;
 import com.example.demo.room.RoomActivity;
 import com.example.demo.viewmodel.ViewModelActivity;
+import com.example.demo.workmanager.WorkManagerActivity;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner, LocationObserver.OnLocationChangeListener {
 
@@ -92,5 +90,9 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, L
 
     public void toRoom(View view) {
         startActivity(new Intent(MainActivity.this, RoomActivity.class));
+    }
+
+    public void toWorkManager(View view) {
+        startActivity(new Intent(MainActivity.this, WorkManagerActivity.class));
     }
 }
