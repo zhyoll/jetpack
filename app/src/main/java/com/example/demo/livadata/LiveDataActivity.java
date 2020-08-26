@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.example.demo.R;
 
 public class LiveDataActivity extends AppCompatActivity {
 
+    private final static String TAG = "LiveDataActivity";
     TextView textView;
     MutableLiveData<Integer> liveData;
 
@@ -33,6 +35,7 @@ public class LiveDataActivity extends AppCompatActivity {
     }
 
     public void resetTimer(View view) {
+        Log.e(TAG, "RESET");
         liveData.setValue(0);
     }
 }

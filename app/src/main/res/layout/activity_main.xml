@@ -25,6 +25,14 @@
         android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/btn_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toRoom"
+        android:text="Room"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

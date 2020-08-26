@@ -20,6 +20,7 @@ import android.view.View;
 import com.example.demo.lifecycle.LocationObserver;
 import com.example.demo.lifecycle.MyLifecycleService;
 import com.example.demo.livadata.LiveDataActivity;
+import com.example.demo.room.RoomActivity;
 import com.example.demo.viewmodel.ViewModelActivity;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner, LocationObserver.OnLocationChangeListener {
@@ -86,5 +87,10 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, L
 
     public void toLiveData(View view) {
         startActivity(new Intent(MainActivity.this, LiveDataActivity.class));
+    }
+
+
+    public void toRoom(View view) {
+        startActivity(new Intent(MainActivity.this, RoomActivity.class));
     }
 }

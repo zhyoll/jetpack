@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.demo.R;
@@ -11,7 +12,6 @@ import com.example.demo.R;
 public class ViewModelActivity extends AppCompatActivity {
 
     private TextView textView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +31,18 @@ public class ViewModelActivity extends AppCompatActivity {
 
         });
         timerViewModel.startTiming();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.e("viewModel", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("viewModel", "onDestroy");
     }
 }

@@ -1,5 +1,7 @@
 package com.example.demo.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.ViewModel;
 
 import java.util.Timer;
@@ -40,6 +42,7 @@ public class TimerViewModel extends ViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
+        Log.e("viewModel", "onCleared");
         timer.cancel();
     }
 }

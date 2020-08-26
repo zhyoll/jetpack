@@ -9,17 +9,40 @@
     <TextView
         android:id="@+id/textViewLiveData"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_reset_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="重置定时器"
         android:onClick="resetTimer"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="重置定时器"
         android:textAllCaps="false"
+        app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="116dp" />
 
+    <fragment
+        android:id="@+id/one_fragment"
+        android:name="com.example.demo.livadata.OneFragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_reset_timer" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/one_fragment" />
+
+    <fragment
+        android:id="@+id/two_fragment"
+        android:name="com.example.demo.livadata.TwoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 </androidx.constraintlayout.widget.ConstraintLayout>

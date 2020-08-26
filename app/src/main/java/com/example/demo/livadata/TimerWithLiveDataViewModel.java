@@ -14,6 +14,7 @@ import java.util.TimerTask;
 public class TimerWithLiveDataViewModel extends ViewModel {
 
     private MutableLiveData<Integer> currentSecond;
+    private volatile int second = 0;
 
     public LiveData<Integer> getCurrentSecond() {
         if (currentSecond == null) {
@@ -24,23 +25,35 @@ public class TimerWithLiveDataViewModel extends ViewModel {
 
     private Timer timer;
 
+
     //开始计时
     public void startTiming() {
         if (timer == null) {
             currentSecond.setValue(0);
+            second = 0;
             timer = new Timer();
             TimerTask timerTask = new TimerTask() {
                 @Override
                 public void run() {
+                    second++;
 
-                    new Handler(Looper.getMainLooper()).post(() -> {
-                        Integer value = currentSecond.getValue();
-                        currentSecond.setValue(value++);
+                    new Handler(Looper.getMainLooper()).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (currentSecond != null)
+                                currentSecond.setValue(second);
+                        }
                     });
+
                 }
             };
             timer.schedule(timerTask, 1000, 1000);
         }
     }
 
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        currentSecond = null;
+    }
 }
