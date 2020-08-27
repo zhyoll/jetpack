@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.demo.databinding.BookRatingUtil" />
+
+        <variable
+            name="book"
+            type="com.example.demo.databinding.Book" />
+
+        <variable
+            name="EventHandler"
+            type="com.example.demo.databinding.EventHandlerListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".databinding.DataBindingActivity">
+
+        <!-- <TextView
+             android:id="@+id/tvTitle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@{book.title}" />
+
+         <TextView
+             android:id="@+id/tvAuthor"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@{book.author}" />
+
+         <TextView
+             android:id="@+id/tvRating"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@{BookRatingUtil.getRatingString(book.rating)}" />-->
+
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{EventHandler.onButtonClicked}"
+            android:text="clickMe"
+            android:textAllCaps="false" />
+
+        <include
+            layout="@layout/layout_content"
+            app:book="@{book}" />
+    </LinearLayout>
+</layout>

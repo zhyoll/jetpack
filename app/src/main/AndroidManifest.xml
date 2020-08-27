@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -10,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".workmanager.WorkManagerActivity"></activity>
+        <activity android:name=".mvvm.MvvmActivity"></activity>
+        <activity android:name=".paging.PagingActivity" />
+        <activity android:name=".databinding.RvDataBindingActivity" />
+        <activity android:name=".databinding.DataBindingActivity" />
+        <activity android:name=".workmanager.WorkManagerActivity" />
         <activity android:name=".room.RoomActivity" />
         <activity android:name=".livadata.LiveDataActivity" />
         <activity android:name=".viewmodel.ViewModelActivity" />

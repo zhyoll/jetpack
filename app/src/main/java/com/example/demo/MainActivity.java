@@ -15,8 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.demo.databinding.DataBindingActivity;
+import com.example.demo.databinding.RvDataBindingActivity;
 import com.example.demo.lifecycle.LocationObserver;
 import com.example.demo.livadata.LiveDataActivity;
+import com.example.demo.mvvm.MvvmActivity;
+import com.example.demo.paging.PagingActivity;
 import com.example.demo.room.RoomActivity;
 import com.example.demo.viewmodel.ViewModelActivity;
 import com.example.demo.workmanager.WorkManagerActivity;
@@ -94,5 +98,21 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, L
 
     public void toWorkManager(View view) {
         startActivity(new Intent(MainActivity.this, WorkManagerActivity.class));
+    }
+
+    public void toDataBinding(View view) {
+        startActivity(new Intent(MainActivity.this, DataBindingActivity.class));
+    }
+
+    public void toRecyclerDataBinding(View view){
+        startActivity(new Intent(MainActivity.this, RvDataBindingActivity.class));
+    }
+
+    public void toPaging(View view){
+        startActivity(new Intent(MainActivity.this, PagingActivity.class));
+    }
+
+    public void toMVVM(View view){
+        startActivity(new Intent(MainActivity.this, MvvmActivity.class));
     }
 }

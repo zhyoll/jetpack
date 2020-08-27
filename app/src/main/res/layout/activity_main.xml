@@ -41,6 +41,38 @@
         android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/btn_data_binding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toDataBinding"
+        android:text="DataBinding"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_recycler_data_binding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toRecyclerDataBinding"
+        android:text="RecyclerDataBinding"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_paging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toPaging"
+        android:text="Paging"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_MVVM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toMVVM"
+        android:text="MVVM"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
